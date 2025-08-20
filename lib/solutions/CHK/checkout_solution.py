@@ -27,7 +27,7 @@ class CheckoutSolution:
             'K': [(2, 150)],
             'P': [(5, 200)],
             'Q': [(3, 80)],
-            'V': [(3, 180), (2, 90)]
+            'V': [(3, 130), (2, 90)]
             }
         
         counts = Counter(skus)
@@ -70,3 +70,4 @@ class CheckoutSolution:
             else:
                 total += count * price
         return total
+
