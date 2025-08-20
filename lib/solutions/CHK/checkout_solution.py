@@ -54,6 +54,3 @@ class CheckoutSolution:
             else:
                 total += payable * price
         return total
-
-
-
