@@ -17,9 +17,9 @@ class CheckoutSolution:
             'A': [(3, 130), (5, 200)],
             'B': [(2, 45)]
             }
-        cross_offers = {
+        cross_offers = [
             {'source': 'E', 'req': 2, 'target': 'B', 'free': 1}
-        }
+        ]
 
         counts = Counter(skus)
 
@@ -54,5 +54,6 @@ class CheckoutSolution:
             else:
                 total += payable * price
         return total
+
 
 
