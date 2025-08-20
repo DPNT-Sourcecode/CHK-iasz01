@@ -9,7 +9,7 @@ class CheckoutSolution:
         if not isinstance(skus, str):
             return -1
         for char in skus:
-            if char not in 'ABCDE':
+            if char not in 'ABCDEF':
                 return -1
             
         prices = {'A': 50, 'B': 30, 'C': 20, 'D': 15, 'E': 40, 'F': 10}
@@ -47,4 +47,5 @@ class CheckoutSolution:
             else:
                 total += count * price
         return total
+
 
