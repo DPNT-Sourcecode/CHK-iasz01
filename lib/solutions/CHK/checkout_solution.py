@@ -43,6 +43,3 @@ class CheckoutSolution:
             else:
                 total += count * price
         return total
-
-
-
