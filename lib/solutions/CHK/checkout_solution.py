@@ -15,7 +15,7 @@ class CheckoutSolution:
         prices = {'A': 50, 'B': 30, 'C': 20, 'D': 15, 'E': 40}
         offers = {
             'A': [(3, 130), (5, 200)],
-            'B': (2, 45)
+            'B': [(2, 45)]
             }
         cross_offers = {
             {'source': 'E', 'req': 2, 'target': 'B', 'free': 1}
@@ -54,4 +54,5 @@ class CheckoutSolution:
             else:
                 total += payable * price
         return total
+
 
