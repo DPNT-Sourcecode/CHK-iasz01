@@ -49,15 +49,20 @@ class CheckoutSolution:
             'U': free_u
         }
         # Group items
-        group_items = ['S', 'T', 'X', 'Y', 'Z']
-        group_price_list = []
-        for item in group_items:
-            group_price_list.extend([prices[item]]*count.get(item, 0))
-        group_price_list.sort(reverse=True)
-        num_groups=len(group_price_list) // 3
-        group_total = num_groups * 45 + sum(group_price_list[3* num_groups:])
+        total = 0
 
-        total = group_total
+        group_items = ['S', 'T', 'X', 'Y', 'Z']
+        price_list = []
+        for item in group_items:
+            count = count.get(item,0) - free_counts.get(item, 0)
+            if count > 0:
+                price_list.extend([prices[item]]*count)
+        price_list.sort(reverse=True)
+        num_groups=len(price_list) // 3
+        group_total = num_groups * 45 
+        remainder_total = sum(price_list[3* num_groups:])
+
+        total += group_total + remainder_total
 
         for item, price in prices.items():
             if item in group_items:
@@ -79,4 +84,5 @@ class CheckoutSolution:
             else:
                 total += count * price
         return total
+
 
