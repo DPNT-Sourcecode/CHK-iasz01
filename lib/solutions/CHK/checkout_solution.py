@@ -35,17 +35,16 @@ class CheckoutSolution:
         # These are the cross items
         free_b = min(counts.get('B', 0), counts.get('E', 0) // 2)
         free_q = min(counts.get('Q', 0), counts.get('R', 0) // 3)
-
+        free_m = min(counts.get('M', 0), counts.get('N', 0) // 3)
         # Same items free offer
         free_f = counts.get('F', 0)//3
-        free_n = counts.get('N', 0)//4
         free_u = counts.get('U', 0)//4
 
         #Dict for frree items to stop if repeating loop
         free_counts = {
             'B': free_b,
             'F': free_f,
-            'N': free_n,
+            'M': free_m,
             'Q': free_q,
             'U': free_u
         }
@@ -70,4 +69,5 @@ class CheckoutSolution:
             else:
                 total += count * price
         return total
+
 
